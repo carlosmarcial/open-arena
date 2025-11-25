@@ -1,0 +1,43 @@
+/**
+ * RollingNumber Styles
+ * Shared odometer-style digit animation
+ */
+
+.price {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.prefix {
+  display: inline-flex;
+  align-items: center;
+}
+
+.separator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.digitSlot {
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.digitColumn {
+  display: flex;
+  flex-direction: column;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.digit {
+  display: block;
+  height: 1em;
+  line-height: 1;
+}

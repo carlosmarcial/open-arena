@@ -1,0 +1,20 @@
+{
+  "crons": [
+  {
+  "path": "/api/cron/execute-trades",
+  "schedule": "0 * * * *"
+  },
+  {
+  "path": "/api/cron/monitor-positions",
+  "schedule": "*/15 * * * *"
+  },
+    {
+      "path": "/api/cron/sync-positions",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/snapshot-equity",
+      "schedule": "*/2 * * * *"
+    }
+  ]
+}

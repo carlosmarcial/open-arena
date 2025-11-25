@@ -1,0 +1,87 @@
+.switch {
+  --switch-width: 58px;
+  --switch-height: 26px;
+  --switch-padding: 3px;
+  --knob-size: 20px;
+  --knob-border: 1px;
+  --knob-offset: calc(var(--switch-width) - var(--knob-size) - (var(--switch-padding) * 2) - (var(--knob-border) * 2));
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  padding: var(--switch-padding);
+  border-radius: var(--switch-height);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  outline: none;
+}
+
+.switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.switchLight {
+  background: linear-gradient(145deg, #f5f7fb, #e1e4eb);
+  box-shadow:
+    inset 2.5px 2.5px 5px rgba(163, 177, 198, 0.45),
+    inset -2.5px -2.5px 5px rgba(255, 255, 255, 0.9);
+  border-color: #cbd5e1;
+  color: #667084;
+}
+
+.switchDark {
+  background: linear-gradient(145deg, #1c2027, #272c34);
+  box-shadow:
+    inset 2.5px 2.5px 5px rgba(8, 9, 12, 0.6),
+    inset -2.5px -2.5px 5px rgba(60, 67, 82, 0.38);
+  border-color: #475569;
+  color: #dce1f3;
+}
+
+.switch:focus-visible {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35), 0 0 0 5px rgba(99, 102, 241, 0.2);
+}
+
+.knob {
+  position: absolute;
+  top: 50%;
+  left: var(--switch-padding);
+  width: var(--knob-size);
+  height: var(--knob-size);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  transform: translateX(0) translateY(-50%);
+  box-shadow:
+    -2.5px -2.5px 5px rgba(255, 255, 255, 0.85),
+    2.5px 2.5px 5px rgba(163, 177, 198, 0.4);
+  background: linear-gradient(145deg, #ffffff, #e6ebf4);
+  color: #f59e0b;
+  border: 1px solid #d1d5db;
+}
+
+.switchDark .knob {
+  transform: translateX(var(--knob-offset)) translateY(-50%);
+  background: linear-gradient(145deg, #2f343e, #232730);
+  box-shadow:
+    -2.5px -2.5px 5px rgba(58, 64, 76, 0.45),
+    2.5px 2.5px 5px rgba(8, 9, 12, 0.65);
+  color: #fde68a;
+  border-color: #3a4252;
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+}
+
+.iconMoon {
+  color: #38bdf8;
+}
